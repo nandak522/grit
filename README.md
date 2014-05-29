@@ -1,5 +1,4 @@
 # What buildout does
-===
 It has a ini syntax driven config file and that is used to bootstrap the whole environment.
 Versions file is also the basis. The whole dependency management is done by [parts].
 Each [part] contains a recipe and certain options required for the recipe. And each [part]
