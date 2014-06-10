@@ -1,0 +1,12 @@
+- [x] Define a command line parser
+- [ ] Read an ini file
+- [ ] Build a data structure containing the list of `tasks`
+- [ ] Each task is supposed to take the `runner`. Its own options follow the `runner` option.
+- [ ] Create a predefined task runner called `grit_cmmi` which will accept some list of pkgs. 
+- [ ] Create a predefined task runner called `grit_egg` which will accept some list of eggs.
+  - [ ] If more than one egg is specified, downloads all of them parallely from the configured index server
+  - [ ] Delegates the job of installing each of the above ones to easy_install
+    - [ ] Can we have a hook for easy_install which downloads nested dependencies parallely(using Go)
+  - [ ] Once all the dependencies are downloaded (to a temp dir) then only proceed further
+  - [ ] With the downloaded dependencies, store then in a TREE(N-ary) data-structure and go about installing each of those eggs in a parallel way. Start from the leaf nodes(parallely).
+  - [ ] Dont have parallel writes to the common files(like entry-points for ex:). Defer such operations by storing the same data in memory.
