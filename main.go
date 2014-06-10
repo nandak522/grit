@@ -6,11 +6,15 @@ import (
 	"os"
 )
 
+func usage() {
+	fmt.Fprintf(os.Stderr, "Usage: %s [option]. Where [option] could be one of boot/build/versions/shell\n", os.Args[0])
+	os.Exit(2)
+}
+
 func main() {
 	buildDirectory, _ := os.Getwd()
 	if len(os.Args) == 1 {
-		fmt.Print(errors.New("Usage: grit [option]. Where [option] could be one of boot/build/versions/shell\n"))
-		return
+		usage()
 	}
 	for _, subCommand := range os.Args {
 		if subCommand == "grit" {
